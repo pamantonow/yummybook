@@ -10,6 +10,37 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require rails_bootstrap_forms
  *= require_tree .
  *= require_self
+ 
  */
+
+
+@import "bootstrap";
+@import 'rails_bootstrap_forms';
+
+.homepage{
+  background-image: url("dish.jpg");
+  background-size: 100%;
+}
+
+.welcome h1 {
+  text-align:  center;
+}
+
+.welcome h3{
+  text-align:  center;
+}
+
+.navbar-inverse {
+  margin-bottom: -20px;
+}
+/*.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}*/
