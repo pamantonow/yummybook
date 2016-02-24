@@ -1,14 +1,14 @@
 class SessionsController < ApplicationController
 
-  def login
+  def new
     
   end
 
-  def login
+  def create
     @user = User.find_by(email: params[:email])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      redirect_to root_path
+      redirect_to profile_path
     else
       flash[:notice] = "Your credentials don't match"
       render :'sessions/new'

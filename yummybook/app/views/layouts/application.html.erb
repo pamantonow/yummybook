@@ -38,11 +38,16 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><%=link_to "Register", new_user_path %><span class="sr-only">(current)</span></a></li>
-        <li>
-          <a href="/login" data-toggle="modal" data-target="#login-modal">Login</a>
-        </li>
-        <li class="dropdown">
+        <%if current_user %>
+          <li><%= link_to "Profile", current_user %></li>
+          <li><%= link_to "Logout", logout_path %></li>
+          <% else %> 
+          <li class="active"><%=link_to "Register", new_user_path %><span class="sr-only">(current)</span></a></li>
+          <li>
+            <a href="/login" data-toggle="modal" data-target="#login-modal">Login</a>
+          </li>
+        <% end %> 
+        <!-- <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Action</a></li>
@@ -53,13 +58,32 @@
             <li role="separator" class="divider"></li>
             <li><a href="#">One more separated link</a></li>
           </ul>
-        </li>
+        </li> -->
       </ul>
      
       
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="loginmodal-container">
+      <h1>Login to Your Account</h1><br> 
+        <%= bootstrap_form_tag(url:"/login",method: "post") do |f| %>
+         <center>
+        <%= f.email_field :email, placeholder: "email" %>
+        <%= f.password_field :password, placeholder: "password"%>
+        <%= f.submit "Login" %>
+        </center>
+        <% end %>   
+            <div class="login-help">
+               <a href="/signup"><h4>Register</h4></a>
+             </div>
+    </div>
+
+  </div>
+</div>
 <%= yield %>
 
 </body>

@@ -16,9 +16,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+   if current_user
+    render :'users/show'
+    end
+  end
+
   private
 
   def users_params
     params.require(:user).permit(:username,:email,:password)
   end
+
 end
