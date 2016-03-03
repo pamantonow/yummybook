@@ -1,4 +1,5 @@
 class Recipe < ActiveRecord::Base
-  has_many :users_recipes
-  validates :name, :description, :ingredients, :categories, presence: true
+  belongs_to :user
+  belongs_to :category
+  validates :name, :description, :ingredients,:instructions, presence: true
 end

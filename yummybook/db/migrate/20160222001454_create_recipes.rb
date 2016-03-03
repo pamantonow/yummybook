@@ -5,7 +5,8 @@ class CreateRecipes < ActiveRecord::Migration
       t.text :description
       t.text :ingredients
       t.text :instructions
-      t.string :categories
+      t.references :category
+      t.references :user
 
       t.timestamps null: false
     end

@@ -2,9 +2,9 @@
   <h1>Hello <%=current_user.username%></h1>
 
   <%=link_to "Create Recipe", new_recipe_path%>
-  <%@recipes.each do |recipe| %>
+  <%@categories.each do |category| %>
   <br>
-   <%=recipe.categories %>
+   <%=category.name%>
   <% end %> 
 
 
