@@ -1,4 +1,11 @@
 <div class="profile">
- <h1>hello</h1>
+  <h1>Hello <%=current_user.username%></h1>
+
+  <%=link_to "Create Recipe", new_recipe_path%>
+  <%@recipes.each do |recipe| %>
+  <br>
+   <%=recipe.categories %>
+  <% end %> 
+
 
 </div>

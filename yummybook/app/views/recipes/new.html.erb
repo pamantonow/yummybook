@@ -1,0 +1,34 @@
+<div id="recipes">
+  <%=bootstrap_form_for(@recipe, action: "create") do |f| %>
+  <div class="col-2">
+    <label>
+      <%=f.text_field :name %>
+    </div>
+    </label>
+  <div class="col-2">
+    <label>
+      <%=f.text_area :description %>
+    </label>
+  </div>
+  <div class="col-2">
+    <label>
+      <%=f.text_area :ingredients %>
+    </label>
+   </div>
+   <div class="col-2">
+    <label>
+      <%=f.text_area :instructions %>
+    </label>
+   </div>
+  <div class="col-2">
+    <label>
+    <%=f.text_area :categories %>
+    </label>
+  </div>
+
+
+   <div class="col-submit">
+      <%=f.submit "Create Recipe"%>
+    </div>
+  <% end %> 
+</div>

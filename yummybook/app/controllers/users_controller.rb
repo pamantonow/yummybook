@@ -18,6 +18,8 @@ class UsersController < ApplicationController
 
   def show
    if current_user
+    @recipes = Recipe.all
+    # @recipes.current_user
     render :'users/show'
     end
   end
