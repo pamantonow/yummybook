@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :users_recipes
-  has_many :created_recipes, through: :users_recipes , source: :recipe
+  has_many :recipes
   validates :username, presence: true
   validates :email ,presence: true , uniqueness: true
 
