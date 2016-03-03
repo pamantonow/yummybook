@@ -20,9 +20,10 @@ ActiveRecord::Schema.define(version: 20160222001506) do
     t.string   "name"
     t.text     "description"
     t.text     "ingredients"
+    t.text     "instructions"
     t.string   "categories"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "users", force: :cascade do |t|
