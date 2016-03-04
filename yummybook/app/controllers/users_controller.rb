@@ -17,10 +17,9 @@ class UsersController < ApplicationController
   end
 
   def show
-   if current_user
-    @categories = Category.all
+    @user = User.find(current_user)
+    @categories = @user.saved_categories.all
     render :'users/show'
-    end
   end
 
   private
