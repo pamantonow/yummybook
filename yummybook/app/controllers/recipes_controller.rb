@@ -7,6 +7,7 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
+    @recipe.category
     if @recipe.save
       redirect_to profile_path
     else
@@ -15,10 +16,15 @@ class RecipesController < ApplicationController
     end
   end
 
+  def show
+    @recipe = Recipe.find(params[:id])
+    render :'recipes/show'
+  end
+
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name,:description,:ingredients,:instructions,:categories)
+    params.require(:recipe).permit(:name,:description,:ingredients,:instructions)
   end
 
 end
