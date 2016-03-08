@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20160303033845) do
     t.text     "description"
     t.text     "ingredients"
     t.text     "instructions"
+    t.string   "recipe_image"
     t.integer  "category_id"
     t.integer  "user_id"
     t.datetime "created_at",   null: false

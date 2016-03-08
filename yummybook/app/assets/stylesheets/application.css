@@ -36,6 +36,10 @@
 .navbar-inverse {
   margin-bottom: -20px;
 }
+
+.profile{
+  text-align: center;
+}
 /*.sidebar-nav {
     position: absolute;
     top: 0;

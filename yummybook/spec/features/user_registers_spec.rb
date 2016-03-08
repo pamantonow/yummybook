@@ -14,8 +14,10 @@ describe "the register process", :type => :feature do
       fill_in "password", with: password
 
       click_button "Register"
-    expect(page).to have_content 'Logout'
+      expect(page).to have_content 'Logout'
     end
   end
+
+
 end
 
