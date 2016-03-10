@@ -40,6 +40,10 @@
 .profile{
   text-align: center;
 }
+
+#recipe{
+  text-align: center;
+}
 /*.sidebar-nav {
     position: absolute;
     top: 0;
