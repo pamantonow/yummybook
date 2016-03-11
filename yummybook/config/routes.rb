@@ -11,6 +11,8 @@ Rails.application.routes.draw do
    post 'login' => "sessions#create", as: "login"
    get '/logout' => 'sessions#destroy'
    get 'profile' => 'users#show', as: "profile"
+   # get 'categories/:category_id/recipes/new'=> 'recipes#new',as: "new_recipe"
+   post 'categories/:category_id/recipes' => 'recipes#create'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
@@ -18,6 +20,7 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
    resources :users
    resources :recipes
+
 
   # Example resource route with options:
   #   resources :products do

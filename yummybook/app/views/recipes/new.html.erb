@@ -20,11 +20,8 @@
       <%=f.text_area :instructions %>
     </label>
    </div>
-  <div class="col-2">
-    <label>
-    <%=f.text_area :categories %>
-    </label>
-  </div>
+
+   <%= f.collection_select :category_id,Category.all,:id,:name, class: "form-control" %>
 
 
    <div class="col-submit">
