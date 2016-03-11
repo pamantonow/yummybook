@@ -17,6 +17,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @recipe = Recipe.new
     @user = User.find(current_user)
     @categories = @user.saved_categories.all
     render :'users/show'
