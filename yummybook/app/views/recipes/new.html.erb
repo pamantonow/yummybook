@@ -1,5 +1,5 @@
 <div id="recipes">
-  <%=bootstrap_form_for(@recipe, action: "create") do |f| %>
+  <%=bootstrap_form_for(@recipe, html: { multipart: true }, action: "create") do |f| %>
   <div class="col-2">
     <label>
       <%=f.text_field :name %>
@@ -18,6 +18,11 @@
    <div class="col-2">
     <label>
       <%=f.text_area :instructions %>
+    </label>
+   </div>
+   <div class="col-2">
+    <label>
+      <%=f.file_field :avatar %>
     </label>
    </div>
 

@@ -1,6 +1,9 @@
 class RecipesController < ApplicationController
 
   def index
+    @category = Category.find(params[:category_id])
+    @recipes = @category.recipes
+    render :'recipes/index'
   end
 
   def new
@@ -28,7 +31,7 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name,:description,:ingredients,:instructions)
+    params.require(:recipe).permit(:name,:description,:ingredients,:instructions,:avatar)
   end
 
 end

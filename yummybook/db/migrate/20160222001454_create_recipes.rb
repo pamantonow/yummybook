@@ -5,9 +5,9 @@ class CreateRecipes < ActiveRecord::Migration
       t.text :description
       t.text :ingredients
       t.text :instructions
-      t.string :recipe_image
       t.references :category
       t.references :user
+      t.attachment :avatar
 
       t.timestamps null: false
     end

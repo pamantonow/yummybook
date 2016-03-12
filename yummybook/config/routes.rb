@@ -11,7 +11,7 @@ Rails.application.routes.draw do
    post 'login' => "sessions#create", as: "login"
    get '/logout' => 'sessions#destroy'
    get 'profile' => 'users#show', as: "profile"
-   # get 'categories/:category_id/recipes/new'=> 'recipes#new',as: "new_recipe"
+   get 'categories/:category_id/recipes'=> 'recipes#index', as: 'category_recipes'
    post 'categories/:category_id/recipes' => 'recipes#create'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
