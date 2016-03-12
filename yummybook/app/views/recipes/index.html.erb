@@ -1,0 +1,9 @@
+<div id="recipe">
+  <% @recipes.each do |recipe| %>
+  <br>
+    <p><%=link_to recipe.name, recipe_path(recipe.id)%></p>
+    <p><%=recipe.description%></p>
+    <p><%=time_ago_in_words(recipe.created_at)%></p>
+    
+  <% end %>
+</div>
