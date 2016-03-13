@@ -22,6 +22,18 @@ Rails.application.configure do
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
 
+  
+  
+
+   config.paperclip_defaults = {
+   :storage => :s3,
+   :s3_credentials => {
+   :bucket => ENV['s3_bucket'],
+    :access_key_id => ENV["s3_access_id"],
+    :secret_access_key => ENV['s3_access_key']
+   }
+  }
+
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
