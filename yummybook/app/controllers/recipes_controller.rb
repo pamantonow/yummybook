@@ -14,6 +14,7 @@ class RecipesController < ApplicationController
   def create
     @category = Category.find(params[:recipe][:category_id])
     @recipe = Recipe.new(recipe_params)
+    @recipe.user = current_user
     @category.recipes << @recipe
     if @recipe.save
       redirect_to profile_path
