@@ -13,5 +13,6 @@ Category.create!(name: "Italian", description: "Easy italian recipes")
 Category.create!(name: "Mexican", description: "Real mexican dishes")
 Category.create!(name: "Vegan", description: "Easy vegan recipes")
 Category.create!(name: "Seafood", description: "Quick seafood dishes.")
+Category.create!(name: "Thai food", description: "The best recipes from Thailand")
 
 
