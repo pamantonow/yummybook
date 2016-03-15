@@ -11,4 +11,5 @@
 /log/*
 !/log/.keep
 /tmp
-config/environment_variables.yml
+/config/local_env.yml
+.env
