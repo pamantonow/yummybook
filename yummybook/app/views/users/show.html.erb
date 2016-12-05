@@ -1,11 +1,16 @@
+
 <div class="profile">
-  <h1>Hello <%=current_user.username%></h1>
+  <h1>Welcome back</h1>
   
-  
-  <%=link_to "Create Recipe", new_recipe_path%>
+  <%=link_to "Create Recipe", new_recipe_path, :id => "new-recipe"%>
+  <br>
+  <hr>
   <%@categories.each do |category| %>
-  <br>  
-   <%=link_to category.name, category_recipes_path(category.id)%>
+  	<br>  
+  	<div id="categories">
+  	 	<%=link_to category.name, category_recipes_path(category.id)%>
+ 	 </div>
+
   <% end %> 
 
 

@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @recipes= Recipe.search(params[:name]) 
+    # @recipes= Recipe.search(params[:name]) 
     @user = User.find(current_user)
     @categories = Category.all
     render :'users/show'
